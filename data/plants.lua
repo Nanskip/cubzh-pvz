@@ -5,7 +5,7 @@ local plants = {
         reload = 10,
         shape = "peashooter",
         Init = function(s)
-            s.object.Rotation.Y = 1.2
+            s.object.Rotation.Y = 0.2
 
             s.body = s.object:GetChild(1) s.head = s.body:GetChild(1)
             s.bodyrot = Rotation(s.body.LocalRotation.X, s.body.LocalRotation.Y, s.body.LocalRotation.Z)
