@@ -8,7 +8,7 @@ Config = {
 
 function Client.OnStart()
     _DEBUG = true
-    _HASH = "aab9f3f"
+    _HASH = "21fc0f9"
     _LATEST_LINK = "https://raw.githubusercontent.com/Nanskip/cubzh-pvz/" .. _HASH .. "/"
 
     _DOWNLOAD_EVERYTHING()
@@ -24,7 +24,7 @@ _PLANTS = {
             -- init function
         end,
         Tick = function(s)
-            -- tick function
+            s.shape.Rotation.Y = s.shape.Rotation.Y + 0.01
         end,
     },
     sunflower = {

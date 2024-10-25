@@ -22,13 +22,13 @@ function garden.placeLine(self, number, type)
             s.shape = nil
             
             for i=1, #s.spots do
+                if s.spots[i].plant ~= nil then
+                    s.spots[i].plant:Remove()
+                end
                 s.spots[i]:SetParent(nil)
                 s.spots[i] = nil
             end
             s.spots = nil
-            if s.plant ~= nil then
-                s.plant:Remove()
-            end
             s = nil
         end
     }
@@ -55,6 +55,7 @@ function garden.placeLine(self, number, type)
         spot.Position = Number3(number, 1/3+0.01, i) * scale * 3
 
         spot:SetParent(World)
+        spot.pos = {number, i}
         line.spots[i] = spot
     end
 
