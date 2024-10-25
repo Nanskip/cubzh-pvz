@@ -29,8 +29,8 @@ local plants = {
             if s.tick > 314 then
                 s.tick = 0
             end
-            s.body.LocalRotation = Rotation(s.bodyrot.X, s.bodyrot.Y + math.sin(s.tick*0.01)*0.1, s.bodyrot.Z)
-            s.head.LocalRotation = Rotation(s.headrot.X, s.headrot.Y + math.cos(s.tick*0.01)*0.1, s.headrot.Z)
+            s.body.LocalRotation = Rotation(s.bodyrot.X + math.sin(s.tick*0.02)*0.3, s.bodyrot.Y, s.bodyrot.Z)
+            s.head.LocalRotation = Rotation(s.headrot.X - math.sin(s.tick*0.02)*0.3, s.headrot.Y, s.headrot.Z)
         end,
     },
 }
