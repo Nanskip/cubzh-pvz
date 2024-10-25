@@ -9,12 +9,14 @@ end
 
 function plant.place(self, name, position)
     local scale = 5
-    local _plant = _PLANTS[name]
-    _plant.shape.Position = Number3(position[1], 1/3+0.01, position[2]) * scale * 3
-    _plant.shape:SetParent(World)
+    local _plant = deepcopy(_PLANTS[name])
+    
+    _plant.object = Shape(Items.nanskip[_plant.shape])
+    _plant.object.Position = Number3(position[1]+0.5, 1/3+0.01, position[2]+0.5) * scale * 3
+    _plant.object:SetParent(World)
     _plant:Init()
-    _plant.shape.parent = _plant
-    _plant.shape.Tick = function(s)
+    _plant.object.parent = _plant
+    _plant.object.Tick = function(s)
         s.parent:Tick()
     end
 
