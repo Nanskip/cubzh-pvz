@@ -25,7 +25,7 @@ function garden.placeLine(self, number, type)
     local scale = 5
 
     line.shape.Scale = scale
-    line.shape.Position = Number3(number, 0, number%2) * scale
+    line.shape.Position = Number3(number, 0, number%2) * scale * 3
     line.shape:SetParent(World)
 
     self.lines[number] = line
