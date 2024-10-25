@@ -39,6 +39,7 @@ function garden.placeLine(self, number, type)
 
     line.shape.Scale = scale
     line.shape.Position = Number3(number, 0, number%2) * scale * 3
+    line.shape.Pivot = Number3(0, 0, 0)
     line.shape:SetParent(World)
 
     line.spots = {}
@@ -46,7 +47,7 @@ function garden.placeLine(self, number, type)
         local spot = Quad()
         spot.Color = Color(255, 255, 255, 127)
         spot.Physics = PhysicsMode.Trigger
-        spot.Scale = scale
+        spot.Scale = scale * 3
         spot.Rotation.X = math.pi/2
         spot.Position = Number3(number, 1, i) * scale * 3
 
