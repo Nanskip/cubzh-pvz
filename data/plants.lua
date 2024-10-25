@@ -19,7 +19,7 @@ local plants = {
         Init = function(s)
             s.object.Rotation.Y = 1.2
 
-            s.body = s.object:GetChild(1) s.head = s.object:GetChild(2)
+            s.body = s.object:GetChild(1) s.head = s.body:GetChild(1)
             s.bodyrot = Rotation(s.body.LocalRotation.X, s.body.LocalRotation.Y, s.body.LocalRotation.Z)
             s.headrot = Rotation(s.head.LocalRotation.X, s.head.LocalRotation.Y, s.head.LocalRotation.Z)
             s.tick = 0
@@ -29,8 +29,8 @@ local plants = {
             if s.tick > 314 then
                 s.tick = 0
             end
-            s.body.LocalRotation = Rotation(s.bodyrot.X + math.sin(s.tick*0.02)*0.3, s.bodyrot.Y, s.bodyrot.Z)
-            s.head.LocalRotation = Rotation(s.headrot.X - math.sin(s.tick*0.02)*0.3, s.headrot.Y, s.headrot.Z)
+            s.body.LocalRotation = Rotation(s.bodyrot.X + math.sin(s.tick*0.03)*0.2, s.bodyrot.Y, s.bodyrot.Z)
+            s.head.LocalRotation = Rotation(s.headrot.X - math.sin(s.tick*0.03)*0.2, s.headrot.Y, s.headrot.Z)
         end,
     },
 }
