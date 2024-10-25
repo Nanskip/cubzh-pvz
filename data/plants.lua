@@ -20,8 +20,8 @@ local plants = {
             s.object.Rotation.Y = 1.2
 
             s.body = s.object:GetChild(1) s.head = s.object:GetChild(2)
-            s.bodyrot = Rotation(body.LocalRotation.X, body.LocalRotation.Y, body.LocalRotation.Z)
-            s.headrot = Rotation(head.LocalRotation.X, head.LocalRotation.Y, head.LocalRotation.Z)
+            s.bodyrot = Rotation(s.body.LocalRotation.X, s.body.LocalRotation.Y, s.body.LocalRotation.Z)
+            s.headrot = Rotation(s.head.LocalRotation.X, s.head.LocalRotation.Y, s.head.LocalRotation.Z)
             s.tick = 0
         end,
         Tick = function(s)
