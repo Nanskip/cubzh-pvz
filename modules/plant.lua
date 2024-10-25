@@ -20,6 +20,14 @@ function plant.place(self, name, position)
         s.parent:Tick()
     end
 
+    _plant.Remove = function(s)
+        s.object:SetParent(nil)
+        s.object.Tick = nil
+        s.object = nil
+        s.Remove = nil
+        s = nil
+    end
+
     garden.lines[position[1]].spots[position[2]].plant = _plant
 end
 
