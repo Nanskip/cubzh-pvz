@@ -9,6 +9,13 @@ function garden.INIT(self)
     for i=1, #self.arr do
         self:placeLine(i, self.arr[i])
     end
+
+    Camera:SetModeFree()
+    Camera.Projection = ProjectionMode.Orthographic
+    Camera.Position = Number3(100, 100, 80)
+    Camera.Rotation = Rotation(1, -math.pi/2, 0)
+    Camera.Width = 176
+    Camera.Height = 85
 end
 
 function garden.placeLine(self, number, type)
