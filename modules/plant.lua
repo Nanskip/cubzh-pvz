@@ -13,6 +13,7 @@ function plant.place(self, name, position)
     
     _plant.object = Shape(Items.nanskip[_plant.shape])
     _plant.object.Position = Number3(position[1]+0.5, 1/3+0.01, position[2]+0.5) * scale * 3
+    _plant.object.Scale = scale*0.8
     _plant.object:SetParent(World)
     _plant:Init()
     _plant.object.parent = _plant
