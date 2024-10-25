@@ -26,6 +26,9 @@ function garden.placeLine(self, number, type)
                 s.spots[i] = nil
             end
             s.spots = nil
+            if s.plant ~= nil then
+                s.plant:Remove()
+            end
             s = nil
         end
     }
