@@ -45,7 +45,7 @@ function garden.placeLine(self, number, type)
     line.spots = {}
     for i=1, line.length do
         local spot = Quad()
-        spot.Color = Color(255, 255, 255, 127)
+        spot.Color = Color(255, 255, 255, 0)
         spot.Physics = PhysicsMode.Trigger
         spot.Scale = scale * 3
         spot.Rotation.X = math.pi/2
