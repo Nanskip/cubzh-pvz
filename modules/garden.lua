@@ -15,6 +15,19 @@ function garden.placeLine(self, number, type)
     local line = {
         length = 10,
         number = number,
+        Remove = function(s)
+            s.length = nil
+            s.number = nil
+            s.shape:SetParent(nil)
+            s.shape = nil
+            
+            for i=1, #s.spots do
+                s.spots[i]:SetParent(nil)
+                s.spots[i] = nil
+            end
+            s.spots = nil
+            s = nil
+        end
     }
     if type == "default" then
         line.shape = Shape(Items.nanskip.pvz_garden_line)
@@ -35,13 +48,19 @@ function garden.placeLine(self, number, type)
         spot.Physics = PhysicsMode.Trigger
         spot.Scale = scale
         spot.Rotation.X = math.pi/2
-        spot.Position = Number3(number, 5.01, i) * scale
+        spot.Position = Number3(number, 1, i) * scale * 3
 
         spot:SetParent(World)
         line.spots[i] = spot
     end
 
     self.lines[number] = line
+end
+
+function garden.removeLines(self)
+    for i=1, #self.lines do
+        self.lines[i]:Remove()
+    end
 end
 
 return garden
