@@ -49,7 +49,7 @@ function garden.placeLine(self, number, type)
         spot.Physics = PhysicsMode.Trigger
         spot.Scale = scale * 3
         spot.Rotation.X = math.pi/2
-        spot.Position = Number3(number, 1/scale/3*0.01, i) * scale * 3
+        spot.Position = Number3(number, 1/scale/3+0.01, i) * scale * 3
 
         spot:SetParent(World)
         line.spots[i] = spot
