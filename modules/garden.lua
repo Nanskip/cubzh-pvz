@@ -28,6 +28,17 @@ function garden.placeLine(self, number, type)
     line.shape.Position = Number3(number, 0, number%2) * scale * 3
     line.shape:SetParent(World)
 
+    line.spots = {}
+    for i=1, line.length do
+        local spot = Quad()
+        spot.Color = Color(255, 255, 255, 127)
+        spot.Physics = PhysicsMode.Trigger
+        spot.Position = Number3(number, 5.01, line.length) * scale
+
+        spot:SetParent(World)
+        line.spots[i] = spot
+    end
+
     self.lines[number] = line
 end
 
