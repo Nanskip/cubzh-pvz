@@ -12,8 +12,8 @@ function garden.INIT(self)
 
     Camera:SetModeFree()
     Camera.Projection = ProjectionMode.Orthographic
-    Camera.Position = Number3(100, 100, 80)
-    Camera.Rotation = Rotation(1, -math.pi/2, 0)
+    Camera.Position = Number3(100, 50, 80)
+    Camera.Rotation = Rotation(0.5, -math.pi/2, 0)
     Camera.Width = 176
     Camera.Height = 85
 end
@@ -47,8 +47,8 @@ function garden.placeLine(self, number, type)
 
     local scale = 5
 
-    line.shape.Scale = scale
-    line.shape.Position = Number3(number, 0, number%2) * scale * 3
+    line.shape.Scale = scale * Number3(2, 1, 1)
+    line.shape.Position = Number3(number*2, 0, number%2) * scale * 3
     line.shape.Pivot = Number3(0, 0, 0)
     line.shape:SetParent(World)
 
