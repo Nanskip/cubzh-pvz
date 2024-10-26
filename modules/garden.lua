@@ -12,10 +12,10 @@ function garden.INIT(self)
 
     Camera:SetModeFree()
     Camera.Projection = ProjectionMode.Orthographic
-    Camera.Position = Number3(100, 50, 80)
+    Camera.Position = Number3(200, 70, 80)
     Camera.Rotation = Rotation(0.5, -math.pi/2, 0)
     Camera.Width = 176
-    Camera.Height = 85
+    Camera.Height = 95
 end
 
 function garden.placeLine(self, number, type)

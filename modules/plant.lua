@@ -12,8 +12,8 @@ function plant.place(self, name, position)
     local _plant = deepcopy(_PLANTS[name])
     
     _plant.object = Shape(Items.nanskip[_plant.shape])
-    _plant.object.Position = Number3(position[1]+1.5, 1/3+0.01, position[2]+0.5) * scale * 3
-    _plant.object.Scale = scale/5*0.9
+    _plant.object.Position = Number3(position[1]+0.5, 1/3+0.01, position[2]+0.5) * scale * 3 * Number3(2, 1, 1) + Number3(8, 0, 0)
+    _plant.object.Scale = scale/5*0.8
     _plant.object:SetParent(World)
     _plant:Init()
     _plant.object.parent = _plant
